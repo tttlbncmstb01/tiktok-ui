@@ -9,8 +9,8 @@ const client = wrapper(axios.create({ jar }));
 const cx = classNames.bind(styles);
 function Header() {
     const hanldeSetSession = () => {
-        client
-            .get('http://192.168.1.12:3002/api01', { withCredentials: true })
+        axios
+            .get('http://192.168.1.12:3002/api01')
             .then((res) => {
                 const persons = res.data;
                 console.log(persons);
@@ -18,8 +18,8 @@ function Header() {
             .catch((error) => console.log(error));
     };
     const hanldeGetSession = () => {
-        client
-            .get('http://192.168.1.12:3002/api02', { withCredentials: true })
+        axios
+            .get('http://192.168.1.12:3002/api02')
             .then((res) => {
                 const persons = res.data;
                 console.log(res);
