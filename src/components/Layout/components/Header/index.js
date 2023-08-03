@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function Header() {
     const hanldeSetSession = () => {
         axios
-            .get('https://ben-re-52cb63c8e033.herokuapp.com/zxc')
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/zxc',{ withCredentials: true })
             .then((res) => {
                 const persons = res.data;
                 console.log(persons);
