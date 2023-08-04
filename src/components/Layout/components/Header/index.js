@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 function Header() {
     const hanldeSetSession = () => {
         // https://ben-re-52cb63c8e033.herokuapp.com/zxc
+        // http://192.168.1.9:3001/api02
         axios
             .get('https://ben-re-52cb63c8e033.herokuapp.com/api01', { withCredentials: true })
             .then((res) => {
@@ -18,6 +19,16 @@ function Header() {
             })
             .catch((error) => console.log(error));
     };
+    const hanldeGetSession = () => {
+        axios
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02', { withCredentials: true })
+            .then((res) => {
+                const persons = res.data;
+                console.log(res.data);
+            })
+            .catch((error) => console.log(error));
+    };
+
     const hanldeSetSession2 = () => {
         axios
             .get('https://ben-re-52cb63c8e033.herokuapp.com/api01')
@@ -27,6 +38,16 @@ function Header() {
             })
             .catch((error) => console.log(error));
     };
+    const hanldeGetSession2 = () => {
+        axios
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02')
+            .then((res) => {
+                const persons = res.data;
+                console.log(res.data);
+            })
+            .catch((error) => console.log(error));
+    };
+
     const hanldeSetSession3 = () => {
         fetch('https://ben-re-52cb63c8e033.herokuapp.com/api01', {
             method: 'GET',
@@ -43,24 +64,6 @@ function Header() {
             })
             .then((data) => console.log(data))
             .catch((error) => console.log('error: ' + error));
-    };
-    const hanldeGetSession = () => {
-        axios
-            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02', { withCredentials: true })
-            .then((res) => {
-                const persons = res.data;
-                console.log(res.data);
-            })
-            .catch((error) => console.log(error));
-    };
-    const hanldeGetSession2 = () => {
-        axios
-            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02')
-            .then((res) => {
-                const persons = res.data;
-                console.log(res.data);
-            })
-            .catch((error) => console.log(error));
     };
     const hanldeGetSession3 = () => {
         fetch('https://ben-re-52cb63c8e033.herokuapp.com/api02', {
