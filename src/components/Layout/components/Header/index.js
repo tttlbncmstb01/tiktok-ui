@@ -11,7 +11,7 @@ function Header() {
     const hanldeSetSession = () => {
         // https://ben-re-52cb63c8e033.herokuapp.com/zxc
         axios
-            .get('http://192.168.1.9:3001/api01', { withCredentials: true })
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api01', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
                 console.log(persons);
@@ -20,7 +20,7 @@ function Header() {
     };
     const hanldeSetSession2 = () => {
         axios
-            .get('http://192.168.1.9:3001/api01')
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api01')
             .then((res) => {
                 const persons = res.data;
                 console.log(persons);
@@ -28,7 +28,7 @@ function Header() {
             .catch((error) => console.log(error));
     };
     const hanldeSetSession3 = () => {
-        fetch('http://192.168.1.9:3001/api01', {
+        fetch('https://ben-re-52cb63c8e033.herokuapp.com/api01', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,24 +46,24 @@ function Header() {
     };
     const hanldeGetSession = () => {
         axios
-            .get('http://192.168.1.9:3001/api02', { withCredentials: true })
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
-                console.log(res);
+                console.log(res.data);
             })
             .catch((error) => console.log(error));
     };
     const hanldeGetSession2 = () => {
         axios
-            .get('http://192.168.1.9:3001/api02')
+            .get('https://ben-re-52cb63c8e033.herokuapp.com/api02')
             .then((res) => {
                 const persons = res.data;
-                console.log(res);
+                console.log(res.data);
             })
             .catch((error) => console.log(error));
     };
     const hanldeGetSession3 = () => {
-        fetch('http://192.168.1.9:3001/api02', {
+        fetch('https://ben-re-52cb63c8e033.herokuapp.com/api02', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
