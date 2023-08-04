@@ -9,22 +9,75 @@ const client = wrapper(axios.create({ jar }));
 const cx = classNames.bind(styles);
 function Header() {
     const hanldeSetSession = () => {
+        // https://ben-re-52cb63c8e033.herokuapp.com/zxc
         axios
-            .get('https://ben-re-52cb63c8e033.herokuapp.com/zxc',{ withCredentials: true })
+            .get('http://192.168.1.9:3001/api01', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
                 console.log(persons);
             })
             .catch((error) => console.log(error));
     };
+    const hanldeSetSession2 = () => {
+        axios
+            .get('http://192.168.1.9:3001/api01')
+            .then((res) => {
+                const persons = res.data;
+                console.log(persons);
+            })
+            .catch((error) => console.log(error));
+    };
+    const hanldeSetSession3 = () => {
+        fetch('http://192.168.1.9:3001/api01', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(response.status);
+                }
+                return response.json(); // we only get here if there is no error
+            })
+            .then((data) => console.log(data))
+            .catch((error) => console.log('error: ' + error));
+    };
     const hanldeGetSession = () => {
         axios
-            .get('http://192.168.1.12:3002/api02')
+            .get('http://192.168.1.9:3001/api02', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
                 console.log(res);
             })
             .catch((error) => console.log(error));
+    };
+    const hanldeGetSession2 = () => {
+        axios
+            .get('http://192.168.1.9:3001/api02')
+            .then((res) => {
+                const persons = res.data;
+                console.log(res);
+            })
+            .catch((error) => console.log(error));
+    };
+    const hanldeGetSession3 = () => {
+        fetch('http://192.168.1.9:3001/api02', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(response.status);
+                }
+                return response.json(); // we only get here if there is no error
+            })
+            .then((data) => console.log(data))
+            .catch((error) => console.log('error: ' + error));
     };
     return (
         <header className={cx('wrapper')}>
@@ -32,6 +85,10 @@ function Header() {
                 <div className="test">
                     <div onClick={hanldeSetSession}>Set Session</div>
                     <div onClick={hanldeGetSession}>Get Session</div>
+                    <div onClick={hanldeSetSession2}>Set Session2</div>
+                    <div onClick={hanldeGetSession2}>Get Session2</div>
+                    <div onClick={hanldeSetSession3}>Set Fetch Session 3</div>
+                    <div onClick={hanldeGetSession3}>Get Fetch Session 3</div>
                 </div>
             </div>
         </header>
