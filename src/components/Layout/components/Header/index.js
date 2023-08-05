@@ -15,7 +15,7 @@ function Header() {
             .get('https://ben-re-52cb63c8e033.herokuapp.com/api01', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
-                console.log(persons);
+                console.log(res);
             })
             .catch((error) => console.log(error));
     };
@@ -24,7 +24,7 @@ function Header() {
             .get('https://ben-re-52cb63c8e033.herokuapp.com/api02', { withCredentials: true })
             .then((res) => {
                 const persons = res.data;
-                console.log(res.data);
+                console.log(res);
             })
             .catch((error) => console.log(error));
     };
